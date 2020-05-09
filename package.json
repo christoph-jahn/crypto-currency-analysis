@@ -4,14 +4,32 @@
   "description": "Utility to fetch, convert and analyze crypto currencies",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/**/*.spec.js",
+    "inspect:sanity-testing": "mocha src/**/*.spec.js --grep \"sanity\"",
+    "inspect:lint": "eslint",
+    "inspect:vulnerabilities": "npm audit",
+    "inspect:license": "license-checker --summary --failOn GPLv2",
+    "inspect:all": "concurrently -c \"bgBlue.bold,bgMagenta.bold,yellow\" \"npm:inspect:sanity-testing\" \"npm:inspect:lint\" \"npm:inspect:vulnerabilities\" \"npm:inspect:license\""
   },
-  "author": "Christoph Jahn",
-  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run inspect:all"
+    }
+  },
+  "author": "Christoph Jahn <cjahn@posteo.de>",
+  "license": "MIT",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "concurrently": "^5.2.0",
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-import": "^2.20.2",
+    "esm": "^3.2.25",
+    "husky": "^4.2.5",
+    "license-checker": "^25.0.1",
+    "mocha": "^7.1.2"
   },
   "dependencies": {
     "coingecko-api": "^1.0.10"

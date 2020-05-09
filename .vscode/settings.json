@@ -1,0 +1,6 @@
+{
+  "mochaExplorer.files": "**/*spec.js",
+  "mochaExplorer.require": "esm",
+  "javascript.implicitProjectConfig.checkJs": true,
+  "editor.rulers": [ 120 ]
+}

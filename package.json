@@ -12,5 +12,8 @@
     "eslint": "^7.0.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2"
+  },
+  "dependencies": {
+    "coingecko-api": "^1.0.10"
   }
 }

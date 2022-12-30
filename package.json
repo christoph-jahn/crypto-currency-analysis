@@ -29,7 +29,7 @@
     "esm": "^3.2.25",
     "husky": "^4.2.5",
     "license-checker": "^25.0.1",
-    "mocha": "^7.1.2"
+    "mocha": "^10.2.0"
   },
   "dependencies": {
     "coingecko-api": "^1.0.10"
